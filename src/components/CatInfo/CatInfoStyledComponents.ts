@@ -16,6 +16,7 @@ export const InfoWrapper = styled(Pane)`
 
 export const ImageWrapper = styled(Pane)`
   width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
 `;

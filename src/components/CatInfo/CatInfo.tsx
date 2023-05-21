@@ -1,4 +1,4 @@
-import { Link } from "evergreen-ui";
+import { Link, Spinner } from "evergreen-ui";
 import React, { FC } from "react";
 import { ICats, ICatsBreeds } from "../../store/interfaces";
 import {
@@ -7,8 +7,10 @@ import {
     CharacteristicText,
     DescriptionWrapper,
     ImageWrapper,
-    InfoWrapper, StyledButton,
-    StyledImage, StyledText,
+    InfoWrapper,
+    StyledButton,
+    StyledImage,
+    StyledText,
     StyledTitle
 } from "./CatInfoStyledComponents";
 
@@ -16,14 +18,22 @@ interface IProps {
     currentImageIndex: number,
     cats: ICats[],
     handleGetNewImage: (currentImageIndex: number, breed: ICatsBreeds) => void,
+    isImageLoading: boolean,
 }
 
-export const CatInfo: FC<IProps> = ({currentImageIndex, cats, handleGetNewImage}) => {
+export const CatInfo: FC<IProps> = ({currentImageIndex, cats, handleGetNewImage, isImageLoading}) => {
     return (
         <InfoWrapper>
+
             <ImageWrapper>
-                <StyledImage src={`${cats[currentImageIndex].url}`}/>
+                {isImageLoading ?
+                    <Spinner/>
+                    :
+                    <StyledImage src={`${cats[currentImageIndex].url}`}/>
+                }
+
             </ImageWrapper>
+
             <DescriptionWrapper>
                 {cats[currentImageIndex].breeds.map((breed) => {
                     return (

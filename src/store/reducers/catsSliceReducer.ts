@@ -10,6 +10,7 @@ import {
 const initialState: ICatsReducer = {
     error: '',
     isLoading: false,
+    isImageLoading: false,
     cats: [],
     breeds: [],
 }
@@ -56,18 +57,18 @@ export const catsSlice = createSlice({
         })
 
         builder.addCase(getCatsByBreedImagesAction.pending, (state) => {
-            state.isLoading = true;
+            state.isImageLoading = true;
         })
         builder.addCase(getCatsByBreedImagesAction.fulfilled, (state, action) => {
             const payload = action.payload.res;
             const breedId = action.payload.breedRequestBody.currentImageIndex;
             const randomImageIndex= Math.round(Math.random() * (payload.length - 1));
             state.cats[breedId] = payload[randomImageIndex];
-            state.isLoading = false;
+            state.isImageLoading = false;
         })
         builder.addCase(getCatsByBreedImagesAction.rejected, (state, action) => {
             state.error = action.payload;
-            state.isLoading = false;
+            state.isImageLoading = false;
         })
     }
 })

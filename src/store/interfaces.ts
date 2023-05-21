@@ -24,6 +24,7 @@ export interface ICatsBreeds {
 export interface ICatsReducer{
     error: string | unknown;
     isLoading: boolean;
+    isImageLoading: boolean;
     cats: Array<ICats>;
     breeds: Array<ICatsBreeds>;
 }
