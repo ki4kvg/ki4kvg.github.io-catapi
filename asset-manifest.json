@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ki4kvg.github.io-catapi/static/css/main.3227727f.css",
+    "main.js": "/ki4kvg.github.io-catapi/static/js/main.6a7f091e.js",
+    "index.html": "/ki4kvg.github.io-catapi/index.html",
+    "main.3227727f.css.map": "/ki4kvg.github.io-catapi/static/css/main.3227727f.css.map",
+    "main.6a7f091e.js.map": "/ki4kvg.github.io-catapi/static/js/main.6a7f091e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3227727f.css",
+    "static/js/main.6a7f091e.js"
+  ]
+}
